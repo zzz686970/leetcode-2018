@@ -19,8 +19,6 @@ def customSortString(S, T):
 			index.append(i)
 
 	result = "".join([T[i] for i in index])
-
-
 	return result
 
 
