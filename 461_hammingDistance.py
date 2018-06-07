@@ -1,13 +1,9 @@
 def hammingDistance(x, y):
-	
+	if len(str('{0:032b}'.format(x))) != len(str('{0:032b}'.format(y))):
+		raise ValueError("unequal length")
+	return sum(el1 != el2 for el1 , el2 in zip(str('{0:032b}').format(x), str('{0:032b}').format(y)))
 
-
-def hamming_distance(s1, s2):
-    """Return the Hamming distance between equal-length sequences"""
-    if len(s1) != len(s2):
-        raise ValueError("Undefined for sequences of unequal length")
-    return sum(el1 != el2 for el1, el2 in zip(s1, s2))
 
 x = 1
 y = 4
-print(hamming_distance(x, y))
+print(hammingDistance(x, y))
