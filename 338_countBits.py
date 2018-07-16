@@ -6,4 +6,4 @@ def countBits(num):
 	return result
 
 
-countBits(5)
+print(countBits(5))
