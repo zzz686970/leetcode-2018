@@ -9,7 +9,7 @@ def _format_addr(s):
 	return formataddr((Header(name, 'utf-8').encode(), addr))
 
 mail_user = 'zzz686970@163.com'
-mail_pass = 'Ilove1025'
+mail_pass = raw_input("")
 
 msg = MIMEText("测试邮件，需要进一步完善", 'plain', 'utf-8')
 
