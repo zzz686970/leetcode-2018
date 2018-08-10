@@ -13,8 +13,8 @@ def moveZeroes(nums):
 		if num != 0:
 			nums[i] = num
 			i += 1
-		for j in range(i, len(nums)):
-			nums[j] = 0
+	for j in range(i, len(nums)):
+		nums[j] = 0
 
 
 	# slow = fast = 0
@@ -33,4 +33,5 @@ def moveZeroes(nums):
 
 
 nums = [0,1,0,3,12]
-print(moveZeroes(nums))
+moveZeroes(nums)
+print(nums)
