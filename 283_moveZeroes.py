@@ -8,7 +8,6 @@ def moveZeroes(nums):
 	# 	del nums[i]
 
 	# 	nums.append(0)
-	# return nums
 	i = 0
 	for num in nums:
 		if num != 0:
@@ -17,19 +16,18 @@ def moveZeroes(nums):
 		for j in range(i, len(nums)):
 			nums[j] = 0
 
-	return nums
 
-	slow = fast = 0
-	while fast < len(nums):
-		if nums[fast] !=0:
-			if slow != fast:
-				nums[slow] = nums[fast]
-				nums[fast] = 0
-			slow += 1
+	# slow = fast = 0
+	# while fast < len(nums):
+	# 	if nums[fast] !=0:
+	# 		if slow != fast:
+	# 			nums[slow] = nums[fast]
+	# 			nums[fast] = 0
+	# 		slow += 1
 
-		fast += 1
+	# 	fast += 1
 
-	## return nums.sort(key = lambda x: 1 if x == 0 else 0)
+	## nums.sort(key = lambda x: 1 if x == 0 else 0)
 
 
 
