@@ -71,26 +71,57 @@
 #     t.join()
 # print ("退出主线程")
 
-import threading
-import time
+# import threading
+# import time
 
-def run(n):
-    ## （mutex）
-    lock.acquire()
-    global num
-    num += 1
-    lock.release()
+# def run(n):
+#     ## （mutex）
+#     lock.acquire()
+#     global num
+#     num += 1
+#     lock.release()
 
-num = 0
-lock = threading.Lock()     #实例化一个锁对象
-t_obj = [] 
+# num = 0
+# lock = threading.Lock()     #实例化一个锁对象
+# t_obj = [] 
 
-for i in range(20000):
-    t = threading.Thread(target=run, args=("t-%s" % i,))
-    t.start()
-    t_obj.append(t)
+# for i in range(20000):
+#     t = threading.Thread(target=run, args=("t-%s" % i,))
+#     t.start()
+#     t_obj.append(t)
 
-for t in t_obj:
-    t.join()
+# for t in t_obj:
+#     t.join()
 
-print ("num:", num)
+# print ("num:", num)
+
+import threading 
+from threading import Thread
+
+class LockThread(Thread):
+	count = 0
+	def __init__(self, name = None, lock = None):
+		Thread.__init__(self, name=name)
+		self.lock = lock
+
+	def run(self):
+		self.lock.acquire()
+		print('thread is '+threading.current_thread().getName()+', lock acquired!')
+		for i in range(0, 100000):
+			LockThread.count += 1
+		print('thread is '+threading.current_thread().getName()+', pre lock release!')
+		self.lock.release()
+
+if __name__ == '__main__':
+	threads = list()
+	lock = threading.Lock()
+	for i in range(10):
+		thread = LockThread(name= str(i), lock = lock)
+		thread.start()
+		threads.append(thread)
+
+	for thread in threads:
+		thread.join()
+	print('Main Thread finish, LockThread.count is:'+str(LockThread.count))
+
+
