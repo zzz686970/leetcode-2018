@@ -63,6 +63,17 @@ class linkedList(object):
 		st = st[:-2] + ")"
 		return st
 
+class treeNode(object):
+	def __init__(self, x):
+		self.x = x
+		self.left = None
+		self.right = None
+		self.level = None
+
+	def __str__(self):
+		return str(self.x)
+
+
 
 # a_list = [2,3,5,6,8,9]
 # newList = LinkedList(a_list)
