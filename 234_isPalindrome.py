@@ -26,13 +26,14 @@ class Solution:
 		# rev records the first half, need to set the same structure as fast, slow, hence later we have rev.next
 		rev = None
 		# initially slow and fast are the same, starting from head
-		slow = fast = head
-		while fast and fast.next:
+		fast  = slow =  head
+		while fast and fast.next:			
+	
 			# fast traverses faster and moves to the end of the list if the length is odd
-			fast = fast.next.next
-			
+			fast = fast.next.next		
 			# take it as a tuple being assigned (rev, rev.next, slow) = (slow, rev, slow.next), hence the re-assignment of slow would not affect rev (rev = slow)
 			rev, rev.next, slow = slow, rev, slow.next
+			
 		if fast:
 		   # fast is at the end, move slow one step further for comparison(cross middle one)
 			slow = slow.next
@@ -47,12 +48,20 @@ class Solution:
 
 if __name__ == '__main__':
 	from _utils import linkedList
-	a_list = [2,3,2]
-	newList = linkedList(a_list)
+	a_list = [2,3,5,3,1]
+	# Node1, Node2, Node3, Node4, Node5 = ListNode(1), ListNode(2), ListNode(3), ListNode(2), ListNode(1)
+	# Node1.next = Node2
+	# Node2.next = Node3
+	# Node3.next = Node4
+	# Node4.next = Node5
+	
+
+	# newList = linkedList(a_list)
+	# print(newList.head.val)
 
 	a = Solution()
 
-	print(a.isPalindrome(newList.head))
+	print(a.isPalindrome2(newList.head))
 
 
 

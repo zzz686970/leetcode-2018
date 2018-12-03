@@ -8,7 +8,7 @@ class linkedList(object):
 		self.head = None
 		self._counter = 0
 		if isinstance(iterable, (str, tuple, list)):
-			for item in iterable:
+			for item in iterable[::-1]:
 				self.push(item)
 
 	def push(self, val):
