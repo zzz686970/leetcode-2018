@@ -1,12 +1,11 @@
 def intToRoman(num):
-	letters=['I','V','X','L','C','D','M']
-	values = [1,5,10,50,100,500,1000]
-	ans = {}
-	for a, b in zip(letters, values):
-		ans[a] = b
+	# return ans
+	dict = ["M","CM","D","CD","C","XC","L","XL","X","IX","V","IV","I"]
+	nums = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1]
+	result = ""
+	for letter, n in zip(dict, nums):
+		result += letter * int(num // n)
+		num %= n
+	return result
 
-	
-
-	print(ans)
-
-print(intToRoman(1))
+print(intToRoman())
