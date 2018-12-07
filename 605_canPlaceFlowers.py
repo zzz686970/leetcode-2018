@@ -13,7 +13,7 @@ def canPlaceFlowers(flowerbed, n):
 	# 		if index+1 <= len(flowerbed) and flowerbed[index-1] == 0 and flowerbed[index+1] == 0 and flowerbed[index]== 0:
 	# 			flowerbed[index] = 1
 	# 			cnt -= 1
-	# 	if cnt == 0:
+	# 	if cnt == 0: 
 	# 		return True
 
 	# return False
@@ -27,3 +27,5 @@ def canPlaceFlowers(flowerbed, n):
 flowerbed=[0,0,1,0,1]
 n= 1
 print(canPlaceFlowers(flowerbed, n))
+
+
