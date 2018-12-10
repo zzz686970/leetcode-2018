@@ -11,13 +11,12 @@ class RecentCounter:
 		:rtype: int
 		"""
 		self.records.append(t)
-		self.cnt -= 1
-		self.index = len(self.records) - 1
-		if t - self.records[self.index] <= 3000:
-			while t - self.records[self.index] <= 3000:
-				self.index -= 1
-				self.cnt +=1
-
+		self.cnt += 1
+		if t - self.records[self.index] > 3000:
+			while  t-self.records[self.index] >3000:
+				self.index += 1
+				self.cnt -=1
+		
 		return self.cnt
 
 		## timeout
