@@ -1,5 +1,4 @@
 def toHex(num):
-	# d = [el for el in range(0, 10)]+ [el for el in  ('abcdef')]
 	ans = ''
 	d = {k:v for k,v in zip(range(10,17), 'abcdef')}
 	print(d)
