@@ -70,6 +70,3 @@ a = Solution()
 print(a.getMinimumDifference(node1))
 
 
-
-
-
