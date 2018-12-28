@@ -21,38 +21,45 @@ class Solution:
 		:type root: TreeNode
 		:rtype: int
 		"""
-		# node, stack = root, []
-		# visited = None
-		# dist = float('inf')
-		# while stack or node:
-		# 	if node:
-		# 		stack.append(node)
-		# 		node = node.left 
-		# 	else:
-		# 		node =  stack.pop()
-		# 		if visited and node.val - visited.val < dist :
-		# 			dist = node.val - visited.val
-		# 		visited = node 
-		# 		node = node.right
+		node, stack = root, []
+		visited = None
+		dist = float('inf')
+		while stack or node:
+			if node:
+				stack.append(node)
+				node = node.left 
+			else:
+				node =  stack.pop()
+				if visited and node.val - visited.val < dist :
+					dist = node.val - visited.val
+				visited = node 
+				node = node.right
 
-		# return dist
+		return dist
 
+
+
+
+		## way2
 		if not root: return 0
 		stack = [root]
-		res = []
+		# res = []
 		ans = float('inf')
 		prev = None
 		while stack:
 			node = stack[-1]
 			if node.left:
-				stack.append(node)
+				stack.append(node.left)
+				node.left = None
 			else:
 				node = stack.pop()
-				res.append(node.val)
+				# res.append(node.val)
 				if prev and node.val - prev.val < ans:
 					ans = node.val - prev.val 
-				prev = node 
-				stack.append(node.right)
+				prev = node
+				if node.right: 
+					stack.append(node.right)
+					node.right = None
 		return ans 
 
 node1 = TreeNode(4)
