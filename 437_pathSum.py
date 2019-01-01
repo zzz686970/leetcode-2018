@@ -41,7 +41,7 @@ class Solution1:
 		if not root: return
 		curr_path += root.val 
 		prev_path = curr_path - target 
-		self.result = cache.get(prev_path, 0)
+		self.result += cache.get(prev_path, 0)
 		cache[curr_path] = cache.get(curr_path, 0) + 1
 
 		self.dfs(root.left, target, curr_path, cache)

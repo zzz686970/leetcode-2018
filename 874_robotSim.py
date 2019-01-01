@@ -1,29 +1,43 @@
 def robotSim(commands, obstacles):
-	# direction = 'n'
-	# next_point = [0, 0]
-	# for i in range(len(commands)):
-	# 	if commands[i] == -2:
-	# 		next_point = [commands[i+1], 0]
-	# 	elif commands[i] = -1:
-	# 		next_point = 
-	x,y = 0, 0
-	dx, dy = 0, 1
-	best = 0
+	# -2: turn left 90 degrees
+	# -1: turn right 90 degrees
+	# 1 <= x <= 9: move forward x units
+	# [4,-1,3] --> 25
+
+	i = j = mx = d = 0
+	move, obstacles = [(0,1),(-1,0),(0,-1),(1,0)], set(map(tuple, obstacles))
+
 	for command in commands:
-		if command == -2:
-			dx, dy = -dy, dx
-		elif command == -1:
-			dx, dy = dy, -dx
+		if command == -2: d = (d+1) % 4
+		elif command == -1: d = (d-1) % 4
 		else:
-			for i in range(command):
-				if (x+dx, y+dy) in obstacles:
-					break
-				else:
-					x += dx 
-					y += dy 
+			x, y = move[d]
+			while command and (i+x, j+y) not in obstacles:
+				i += x
+				j += y 
+				command -= 1
+			mx = max(mx, i**2 + j**2)
+	return mx
 
-			best = max(best, x*x + y*y)
+	## way2
+	# x,y = 0, 0
+	# dx, dy = 0, 1
+	# best = 0
+	# for command in commands:
+	# 	if command == -2:
+	# 		dx, dy = -dy, dx
+	# 	elif command == -1:
+	# 		dx, dy = dy, -dx
+	# 	else:
+	# 		for i in range(command):
+	# 			if (x+dx, y+dy) in obstacles:
+	# 				break
+	# 			else:
+	# 				x += dx 
+	# 				y += dy 
 
-	return best
+	# 		best = max(best, x*x + y*y)
+
+	# return best
 
 print(robotSim(commands = [4,-1,3], obstacles = []))
