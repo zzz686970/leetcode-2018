@@ -1,0 +1,6 @@
+def stoneGame(piles):
+
+
+
+
+
