@@ -13,3 +13,5 @@ print(removeComments(["/*Test program */", "int main()", "{ ", "  // variable de
 print(removeComments(["main() {", "   int x = 1; // Its comments here", "   x++;", "   cout << x;", "   //return x;", "   x--;", "}"]))
 
 print(removeComments(["main() {", "/* here is commments", "  // still comments */", "   double s = 33;", "   cout << s;", "}"]))
+
+
