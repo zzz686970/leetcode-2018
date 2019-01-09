@@ -7,7 +7,7 @@ class TopVotedCandidate:
 		"""
 		self.res, self.times = [], times 
 		cnt, win = {}, -1
-		for t, p in zip(times,persons):
+		for t, p in zip(times, persons):
 			cnt[p] = cnt.get(p, 0) + 1
 			if cnt[p] >= cnt.get(win, 0): win = p
 			self.res.append(win)
@@ -20,7 +20,6 @@ class TopVotedCandidate:
 		:rtype: int
 		"""
 		return self.res[bisect.bisect(self.times, t)-1]
-
 
 # Your TopVotedCandidate object will be instantiated and called as such:
 # obj = TopVotedCandidate(persons, times)

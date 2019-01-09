@@ -28,5 +28,5 @@ def new21Game(N, K, W):
 	# return 
 
 # print(new21Game(N = 10, K = 1, W = 10))
-print(new21Game(N = 6, K = 1, W = 10))
-# print(new21Game(N = 21, K = 17, W = 10))
+# print(new21Game(N = 6, K = 1, W = 10))
+print(new21Game(N = 21, K = 17, W = 10))
