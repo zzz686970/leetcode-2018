@@ -22,3 +22,4 @@ class Solution:
 	def checkWin(self, max_num, bit_mask, remain_sum)
 
 print(canIWin(18, 79))
+
