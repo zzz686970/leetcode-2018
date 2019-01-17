@@ -1,6 +1,7 @@
 def superPow(a, b):
 	res = []
 	power = int(''.join([str(el) for el in b]))
+	print(power)
 	for i in range(power+1):
 		# if a ** i < 1337:
 		res.append(a**i % 1337)
@@ -8,9 +9,9 @@ def superPow(a, b):
 		# 	break
 	# power %= len(res)
 
-	return res
+	return res[-1]
 
-print(superPow(2, [30]))
+print(superPow(2, [1,0]))
 	
 	## definitely time limit
 	# return (a << int(''.join([str(el) for el in b]))-1) % 1337
