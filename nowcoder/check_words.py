@@ -2,8 +2,7 @@
 # @Author: zzz686970
 # @Date:   2019-01-17 23:36:31
 # @Last Modified by:   zzz686970
-# @Last Modified time: 2019-01-17 23:54:14
-
+# @Last Modified time: 2019-01-18 00:21:11
 
 """find a word inside a grid
 
