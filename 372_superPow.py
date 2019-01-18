@@ -1,7 +1,6 @@
 def superPow(a, b):
 	res = []
 	power = int(''.join([str(el) for el in b]))
-	print(power)
 	for i in range(power+1):
 		# if a ** i < 1337:
 		res.append(a**i % 1337)
