@@ -19,4 +19,23 @@ class Solution:
 			else:
 				cnt += 1
 		return cnt
+
+		## way 2
+		import collections
+		import bisect
+
+		res = collections.defaultdict(list)
+		for index, val in enumerate(S): res[val].append(index)
+
+		def check_word(w):
+			j = 0
+			for c in w:
+				if c not in res or res[c][-1] < j:
+					return False 
+				j = res[c][bisect.bisect_left(res[c], j)] + 1
+
+			return True 
+		return sum(1 for w in words if check_word(w))
+
+
 		
