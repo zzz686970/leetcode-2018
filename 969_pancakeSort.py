@@ -7,10 +7,14 @@ def pancakeSort(A):
 	moves = []
 	# for x in range(len(A),1, -1):
 	for x in sorted(A)[::-1]:
-		# i = A.index(x)
+		idx = A.index(x)
+		print(x, idx, A)
+
 		moves.extend([idx+1, x])
 
-		## reverse idx..n numbers, 
+		## reverse idx+1...n numbers, 
 		A = A[:idx:-1] + A[:idx]
 
 	return moves 
+
+print(pancakeSort([4,3,5,7,1]))
