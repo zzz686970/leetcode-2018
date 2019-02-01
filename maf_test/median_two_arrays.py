@@ -1,0 +1,89 @@
+
+"""[summary]
+
+Median of two Sorted Arrays
+There are two sorted arrays A and B of size m and n respectively. Find the median of the two sorted arrays.
+
+
+Example
+Given A=[1,2,3,4,5,6] and B=[2,3,4,5], the median is 3.5.
+Given A=[1,2,3] and B=[4,5], the median is 3.
+
+
+Requirement:
+The overall run time complexity should be O(log (m+n)).
+
+
+Please implement it in Python 2.
+"""
+
+class Solution:
+    """
+    @param: A: An integer array
+    @param: B: An integer array
+    @return: a double whose format is *.5 or *.0
+
+    partition_x + partition_y = (x+y+1) // 2  both sides(left and right) are equal, considering odd and even length
+    need to find:  max_left_x <= min_right_y
+    			   max_left_y <= min_right_x
+
+    elif     max_left_x > min_right_y  ## left_x moves forward too much
+
+    		 end = partition_x
+    
+    else     max_left_y > min_right_x ## left_y moves forward too much
+    		 start += 1
+			
+    """
+    def findMedianSortedArrays(self, A, B):
+
+    	## O(m+n)
+    	## Merge first, then find median
+        # m, n = len(A), len(B)
+        # mid = (m+n) // 2 
+        # c = [0] * (m+n)
+        # while m > 0 and n > 0:
+        # 	if A[m-1] < B[n-1]:
+        # 		c[m+n-1] = B[n-1]
+        # 		n -= 1
+        # 	else:
+        # 		c[m+n-1] = A[m-1]
+        # 		m -= 1
+        # if m:
+        # 	c[:m] = A[:m]
+        # if n:
+        # 	c[:n] = B[:n]
+
+        # return c[mid] * 1. if len(c) % 2 else  (c[mid-1] + c[mid]) / 2.  
+
+        ## O(log(min(m, n)))
+        ## divide and conquer
+
+        a, b = sorted((A, B), key = len)
+        m, n = len(a), len(b)
+        mid = (m+ n - 1) // 2
+        low, high = 0, m 
+
+        ## mid_a -> partition of x 
+        while low < high:
+        	mid_a = (low+high) // 2
+
+        	## left of a is greater than right of b, right side >= left side
+        	## need to move a back
+        	if mid-mid_a-1 < 0 or a[mid_a] >= b[mid-mid_a-1]:
+        		high = mid_a
+        	else:
+        	## otherwise move a forward
+        		low = mid_a + 1
+
+        found = low 
+        result = list(sorted(a[found: found+2] + b[mid-found: mid-found+2]))
+
+        return (result[0] + result[1 - (m+n)%2]) / 2.0
+
+
+a = Solution()
+print(a.findMedianSortedArrays([],[2,3]))
+
+
+
