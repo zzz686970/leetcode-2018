@@ -18,7 +18,7 @@ The overall run time complexity should be O(log (m+n)).
 # @Author: Zhizhong
 # @Date:   2019-02-02 00:09:25
 # @Last Modified by:   zzz686970
-# @Last Modified time: 2019-02-02 00:13:40
+# @Last Modified time: 2019-02-02 01:09:14
 
 class Solution:
     def findMedianSortedArrays(self, nums1, nums2):
@@ -119,11 +119,13 @@ class Solution:
         a, b = sorted((A, B), key = len)
         m, n = len(a), len(b)
         mid = (m+ n - 1) // 2
+        # mid = (m+ n - 1) / 2   Python 2
         low, high = 0, m 
 
         ## mid_a -> partition of x 
         while low < high:
             mid_a = (low+high) // 2
+            # mid_a = (low+high) / 2  Python 2
 
             ## left of a is greater than right of b, right side >= left side
             ## need to move a back

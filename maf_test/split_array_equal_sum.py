@@ -1,3 +1,9 @@
+# -*- coding: utf-8 -*-
+# @Author: Zhizhong
+# @Date:   2019-02-02 01:04:44
+# @Last Modified by:   zzz686970
+# @Last Modified time: 2019-02-02 01:10:54
+
 """
 
 Split Array with Equal Sum
