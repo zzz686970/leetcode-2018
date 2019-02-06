@@ -1,9 +1,9 @@
+import itertools
 def isAdditiveNumber(num):
 	n = len(num)
-	import itertools
-	for i, j in itertools.combinations(range(1, n), 2):
+	for i,j in itertools.combinations(range(1, n), 2):
 		a, b = num[:i], num[i:j]
-		if b != str(int(b)) or a != str(int(a)):
+		if a != str(int(a)) or b != str(int(b)):
 			continue 
 
 		while j < n:
@@ -16,7 +16,7 @@ def isAdditiveNumber(num):
 
 		if j == n:
 			return True 
-	
+
 	return False 
 
 print(isAdditiveNumber("123"))
