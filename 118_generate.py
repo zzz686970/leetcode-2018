@@ -7,4 +7,4 @@ def generate(numRows):
 		result.append(row)
 	return result
 
-print(generate(0))
+print(generate(10))
