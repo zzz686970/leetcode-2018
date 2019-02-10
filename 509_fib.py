@@ -90,12 +90,12 @@ def benchmark(n, *args):
 		print("Time:", "{:.8f}".format((time() - start)*1000) + 'ms' )
 		print()
 
-benchmark(500, fib_iter, fib_o1, fib_bits,   fib_memo, fib_local, fib_local_exc, fib_lru)
+# benchmark(500, fib_iter, fib_o1, fib_bits,   fib_memo, fib_local, fib_local_exc, fib_lru)
 
 
 
 
-def fib(self, N):
+def fib(N):
 	"""
 	:type N: int
 	:rtype: int
@@ -118,6 +118,5 @@ def fib_bits(n):
 		if rec=='1': v1, v2, v3 = v1+v2, v1, v2
 	return v2
 
-
-
+print(fib(32))
 	
