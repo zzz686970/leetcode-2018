@@ -1,4 +1,4 @@
-class solution()
+class solution():
 	def smallestFromLeaf(self, root: 'TreeNode') -> 'str':
 		if not root: return ''
 		left = self.smallestFromLeaf(root.left)
@@ -9,7 +9,7 @@ class solution()
 
 ## dfs 
 
-class solution()
+class solution():
 	def smallestFromLeaf(self, root: 'TreeNode') -> 'str':
 		if not root: return ''
 
@@ -27,5 +27,22 @@ class solution()
 		return list(sorted(s))[0]
 
 
+class solution():
+	def smallestFromLeaf(self, root: 'TreeNode') -> 'str':
+		def dfs(node):
+			if not node:
+				return 
+			l, r = dfs(node.left), dfs(node.right)
+			cur = chr(node.val + 97)
+			if not l and not r:
+				return chr(node.val + 97)
+			if not l:
+				return r + cur 
+			if not r:
+				return l + cur 
 
+			return min(l+cur, r+cur)
+
+		return dfs(root)
+		
 
