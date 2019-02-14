@@ -1,0 +1,22 @@
+/* Add your css styles here */
+.container {
+  display: flex; 
+  flex-wrap: wrap;
+}
+
+.cell {
+  flex-grow: 0.25;
+  border: 1px solid;
+}
+
+@media (max-width: 720px) {
+  .cell {
+    width: calc(50% - 2px)
+  }
+}
+
+@media (max-width: 360px) {
+  .cell {
+    width: calc(100% - 2px)
+  }
+}
