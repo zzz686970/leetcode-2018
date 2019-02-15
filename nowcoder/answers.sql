@@ -110,7 +110,21 @@ AND salaries.to_date='9999-01-01'
 and dept_manager.emp_no is not null;
 
 
---11. 
+--11. 获取所有非manager的员工emp_no
+SELECT emp_no FROM employees
+WHERE emp_no NOT IN (SELECT emp_no FROM dept_manager)
+
+-- 12. 获取所有员工当前的manager，如果当前的manager是自己的话结果不显示，当前表示to_date='9999-01-01'。
+
+select e.emp_no,m.emp_no as manager_no #将m.emp_no的列名变为manager_no
+from dept_manager m,dept_emp e 
+where e.dept_no = m.dept_no 
+and e.emp_no != m.emp_no 
+and m.to_date='9999-01-01';
+
+-- 13. 获取所有部门中当前员工薪水最高的相关信息，给出dept_no, emp_no以及其对应的salary
+
+
 
 
 
