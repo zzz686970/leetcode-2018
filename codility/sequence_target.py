@@ -2,7 +2,7 @@ def solution(N):
 	if N == 0 or N == 1: return 0
 	number = N 
 	moves = []
-	l, r = 0, 1
+	l, r = 0, 1	
 	if number <= 0:
 		number = -number 
 	else:
@@ -28,7 +28,7 @@ def solution(N):
 				moves.append('L')
 
 			number //= 2
-
+	print(moves)
 	return len(moves) if moves else -1
 
-print(solution(2))
+print(solution(-3))
