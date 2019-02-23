@@ -16,4 +16,4 @@ def consecutiveNumbersSum(N):
 
 	return ans 
 
-print(consecutiveNumbersSum(15))
+print(consecutiveNumbersSum(21))
