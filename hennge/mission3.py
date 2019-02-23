@@ -20,13 +20,9 @@ url = 'https://hdechallenge-solve.appspot.com/challenge/003/endpoint'
 # payload = {'github_url':'https://gist.github.com/zzz686970/bb161e3e63c78fdc66106d3695db13c3',
 # 			'contact_email':username}
 
-# payload = {'github_url':'https://gist.github.com/zzz686970/f740ef8b97db7209eb81c0960ea486c1',
-# 			'contact_email':username}
+payload = {'github_url':'https://gist.github.com/zzz686970/f740ef8b97db7209eb81c0960ea486c1',
+			'contact_email':username}
 
-
-username = 'tianyh96@link.cuhk.edu.hk'
-payload_test = {'github_url':'https://gist.github.com/yonghangtian/c4dba348ad3267e1798a29104b9dfb25',
-				"contact_email": "tianyh96@link.cuhk.edu.hk"}
 
 shared_secret = username + 'HDECHALLENGE003'
 
