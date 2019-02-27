@@ -8,18 +8,6 @@ def firstBadVersion(n):
 	#     else:
 	#         return i+1
 
-	## can't ac
-	# l = 0
-	# r = n
-	# while l <= r:
-	# 	mid = int((l + r-1) /2 )
-	# 	if isBadVersion(mid):
-	# 		r = mid - 1
-	# 	else:
-	# 		l = mid + 1
-
-	# return l
-
 	start = 1
 	end = n
 
@@ -33,3 +21,15 @@ def firstBadVersion(n):
 	if isBadVersion(start):
 		return start
 	return end
+
+
+def firstBadVersion(n):
+	l, r = 0, n
+	while l < r:
+		mid = (l + r) // 2
+		if isBadVersion(mid):
+			r = mid
+		else:
+			l = mid + 1
+
+	return l
