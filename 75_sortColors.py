@@ -19,6 +19,8 @@ def sortColors2(nums):
 			nums[i], nums[j] = nums[j], nums[i]
 			j += 1
 		elif nums[i] == 2:
+			## move one step back since nums[i] has been replaced by nums[k]
+			## need to double check
 			nums[i], nums[k] = nums[k], nums[i]
 			i -= 1
 			k -= 1
