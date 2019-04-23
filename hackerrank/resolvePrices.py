@@ -46,7 +46,10 @@ def resolvePrices(count, total, priceListStr):
 def resolvePrices2(count, total, priceListStr):
 	price_list = priceListStr.split(',')
 	result = []
-	for i in combinations(range(1, len(price_list)), count-1):
+	# for i in combinations(range(1, 4), 2):
+	# 	print(i)
+	for i in combinations(range(1, len(price_list)), count):
+		print(np.split(price_list, i))
 		result.append([int("".join(el)) for el in np.split(price_list, i)])
 	
 
@@ -58,7 +61,7 @@ def resolvePrices2(count, total, priceListStr):
 	
 
 if __name__ == '__main__':
-	print(resolvePrices(2, 124245, '123,456,789'))
+	# print(resolvePrices(2, 124245, '123,456,789'))
 	print(resolvePrices2(2, 124245, '123,456,789'))
 
 	# fptr = open(os.environ['OUTPUT_PATH'], 'w')
