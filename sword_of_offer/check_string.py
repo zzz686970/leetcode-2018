@@ -1,4 +1,12 @@
-def check_string_value(val):
+def check_string_value(s):
+
+	for i in s:
+		if s[i] == 'e':
+			if all(el.isdigit() for el in s[i+1:]) or (el[i+1] == '-' and all(el.isdigit() for el in s[i+2:])):
+				return True 
+			else:
+				return False 
+		
 	ans = []
 	for el in val:
 		try:

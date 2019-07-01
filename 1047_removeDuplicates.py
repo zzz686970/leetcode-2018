@@ -1,9 +1,16 @@
+from functools import reduce
 def removeDuplicates(S):
-	i, ans = 0, ''
-	if len(S) == 1: return 1
-	else:
-		while i < len(S)-1:
-			if S[i] == S[i+1]:
-				i += 1
-			else:
-				ans += S[i]
+	ans = []
+	for c in S:
+		if ans and c == ans[-1]:
+			ans.pop()
+		else:
+			ans.append(c)
+
+	# return "".join(ans)
+
+	## way 2
+	## reduce(function, iterable, [initilizer,])
+	return reduce(lambda s,c: s[:-1] if s[-1] == c else s + c, S, '#')[1:]
+
+print(removeDuplicates("abbaca"))
