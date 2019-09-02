@@ -3,7 +3,7 @@
 # 	if N == 1: return 1
 # 	a, b = 0, 1
 # 	for i in range(N):
-# 		a, b = b, a+b 
+# 		a, b = b, a+b
 
 # 	return a
 
@@ -39,7 +39,7 @@ def fib_iter(n):
 	a, b = 0, 1
 	for _ in range(n):
 		a, b = b, a+b
-	return n
+	return b
 
 ## bit ops
 def fib_bits(n):
@@ -102,14 +102,14 @@ def fib(N):
 	"""
 	a, b = 0, 1
 	for _ in range(N):
-		a, b = b, a+b 
+		a, b = b, a+b
 
 	return a
 
 def fib_o1(n):
 	return round(((1+5 ** 0.5) / 2 )**N / (5 ** 0.5))
 
-def fib_bits(n):    
+def fib_bits(n):
 	if N == 0: return 0
 	v1, v2, v3 = 1,1,0
 	for rec in bin(N)[3:]:
@@ -119,4 +119,3 @@ def fib_bits(n):
 	return v2
 
 print(fib(32))
-	
