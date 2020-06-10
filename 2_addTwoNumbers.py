@@ -21,6 +21,7 @@ class Solution:
 				carry += l2.val
 				l2 = l2.next 
 
+			## process carry, keep digit and move cursor to the next
 			cur.next = ListNode(carry % 10)
 			cur = cur.next 
 			carry //= 10
