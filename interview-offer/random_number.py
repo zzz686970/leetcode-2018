@@ -30,7 +30,7 @@ class solution2()
 		res = 25
 		while res > 21:
 			res = 5 * (rand5() -1 ) + rand5()
-
+ 
 		return res % 7 + 1
 
 if __name__ == '__main__':
