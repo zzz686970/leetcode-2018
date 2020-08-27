@@ -1,8 +1,14 @@
 def countNegatives(grid):
 	## O(M*N) ==> O(N^2)
-	return sum([grid[i][j] < 0 for i in range(len(grid)) for j in range(len(grid[0]))])
+    return sum(el < 0 for row in grid for el in row)
+    # return str(grid).count('-')
+    # return (np.array(grid) < 0).sum()
+	# return sum([grid[i][j] < 0 for i in range(len(grid)) for j in range(len(grid[0]))])
 
-	## O(m+n)
+
+# O(NlogN)
+def countNegatives(grid):
+    return sum(bisect_left(type('', (), {'__getitem': lambda _,  i: r[~]})(), 0, 0, len(r)) for r in grid)
 
 def binarySearch(row):
     left = 0
