@@ -22,6 +22,17 @@ def merge(nums1, m, nums2, n):
 	if n:
 		nums1[:n] = nums2[:n]
 
+
+def merge(nums1: List[int], m: int, nums2: List[int], n: int) -> None:
+    """
+    Do not return anything, modify nums1 in-place instead.
+    """
+    for i in range(n):
+        bisect.insort_left(nums1, nums2[i], 0, m)
+        m += 1
+        
+    del nums1[m:]
+
 a = [1,2,3,0,0,0]
 
 b = [4,5,6]
